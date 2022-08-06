@@ -12,6 +12,7 @@ import { Fragment, useEffect, useState } from "react";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Link } from "react-router-dom";
 import ActivityCard from "./activity-card";
+import RoutineCard from "./routine-card";
 
 export default function Routines({ token }) {
   const [routines, setRoutines] = useState([]);
@@ -38,46 +39,9 @@ export default function Routines({ token }) {
         <h1>Routines</h1>
         {token && <Button>Add New Routine</Button>}
         <Stack spacing={2}>
-          {routines.map((routine) => {
+          {routines.map((routine, index) => {
             return (
-              <Card style={{ padding: "10px" }}>
-                <div style={{ display: "flex" }}>
-                  <h3
-                    style={{
-                      marginBottom: "5px",
-                      marginTop: "0px",
-                      flexGrow: 1,
-                    }}
-                  >
-                    {routine.name}
-                  </h3>
-                  <small>Created By: {routine.creatorName}</small>
-                </div>
-                <p style={{ marginTop: "0px" }}>{routine.goal}</p>
-                <Accordion>
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                  >
-                    <Typography>View Activities</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <Stack spacing={2}>
-                      {routine.activities.map((activity) => {
-                        return (
-                          <ActivityCard
-                            name={activity.name}
-                            description={activity.description}
-                            duration={activity.duration}
-                            count={activity.count}
-                          />
-                        );
-                      })}
-                    </Stack>
-                  </AccordionDetails>
-                </Accordion>
-              </Card>
+              <RoutineCard key={index} routine={routine} showCreator={true} />
             );
           })}
         </Stack>
