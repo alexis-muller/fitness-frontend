@@ -25,7 +25,7 @@ const RoutineCard = ({ routine, showCreator, reloadData }) => {
   const [routineGoal, setRoutineGoal] = useState("");
 
   const deleteRoutine = (routineId) => {
-    fetch(`http://fitnesstrac-kr.herokuapp.com/api/routines/${routineId}`, {
+    fetch(`https://fitnesstrac-kr.herokuapp.com/api/routines/${routineId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -53,7 +53,7 @@ const RoutineCard = ({ routine, showCreator, reloadData }) => {
   };
 
   const updateRoutine = () => {
-    fetch(`http://fitnesstrac-kr.herokuapp.com/api/routines/${routine.id}`, {
+    fetch(`https://fitnesstrac-kr.herokuapp.com/api/routines/${routine.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

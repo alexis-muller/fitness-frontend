@@ -28,7 +28,7 @@ export default function MyRoutines({ token }) {
 
   const fetchMyRoutines = () => {
     fetch(
-      `http://fitnesstrac-kr.herokuapp.com/api/users/${username}/routines`,
+      `https://fitnesstrac-kr.herokuapp.com/api/users/${username}/routines`,
       {
         headers: {
           "Content-Type": "application/json",
@@ -50,7 +50,7 @@ export default function MyRoutines({ token }) {
   };
 
   const saveRoutine = () => {
-    fetch("http://fitnesstrac-kr.herokuapp.com/api/routines", {
+    fetch("https://fitnesstrac-kr.herokuapp.com/api/routines", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

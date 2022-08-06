@@ -21,7 +21,7 @@ export default function Activities({ token }) {
   const [errorMessage, setErrorMessage] = useState(null);
 
   useEffect(() => {
-    fetch("http://fitnesstrac-kr.herokuapp.com/api/activities", {
+    fetch("https://fitnesstrac-kr.herokuapp.com/api/activities", {
       headers: {
         "Content-Type": "application/json",
       },
@@ -41,7 +41,7 @@ export default function Activities({ token }) {
   };
 
   const saveActivity = () => {
-    fetch("http://fitnesstrac-kr.herokuapp.com/api/activities", {
+    fetch("https://fitnesstrac-kr.herokuapp.com/api/activities", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

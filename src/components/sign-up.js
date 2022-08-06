@@ -12,7 +12,7 @@ export default function SignUp() {
   const [errorMessage, setErrorMessage] = useState(null);
 
   const createUser = () => {
-    fetch("http://fitnesstrac-kr.herokuapp.com/api/users/register", {
+    fetch("https://fitnesstrac-kr.herokuapp.com/api/users/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

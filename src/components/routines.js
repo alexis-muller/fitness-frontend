@@ -18,7 +18,7 @@ export default function Routines({ token }) {
   const [routines, setRoutines] = useState([]);
 
   useEffect(() => {
-    fetch("http://fitnesstrac-kr.herokuapp.com/api/routines", {
+    fetch("https://fitnesstrac-kr.herokuapp.com/api/routines", {
       headers: {
         "Content-Type": "application/json",
       },

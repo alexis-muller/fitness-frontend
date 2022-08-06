@@ -13,7 +13,7 @@ export default function Login({ setToken }) {
   const [errorMessage, setErrorMessage] = useState(null);
 
   const loginUser = () => {
-    fetch("http://fitnesstrac-kr.herokuapp.com/api/users/login", {
+    fetch("https://fitnesstrac-kr.herokuapp.com/api/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
